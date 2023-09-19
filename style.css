@@ -13,6 +13,78 @@ button{
 html{
     font-size: 63%; 
 }
+.spinner-container{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100vh;
+    background-color: #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circles {
+    width: 8rem;
+    height: 8rem
+}
+
+.circles div{
+    animation: cicles 1.2s
+    cubic-bezier(.5,0,.5,1)
+    infinite;
+    transform-origin: 4rem 4rem;
+    
+  }
+.circles div::after{
+    content: "";
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background-color: #c29525;
+}
+.circles div:nth-child(1)::after{
+    top:6.3rem;
+    left:6.3rem;
+}
+.circles div:nth-child(2)::after{
+    top:6.8rem;
+    left:5.6rem;
+}
+.circles div:nth-child(3)::after{
+    top:7.1rem;
+    left:4.8rem;
+}
+.circles div:nth-child(4)::after{
+    top:7.2rem;
+    left:4rem;
+}
+.circles div:nth-child(5)::after{
+    top:7.1rem;
+    left:3.2rem;
+}
+.circles div:nth-child(6)::after{
+    top:6.8rem;
+    left:2.4rem;
+}
+.circles div:nth-child(7)::after{
+    top:6.3rem;
+    left:1.7rem;
+}
+.circles div:nth-child(8)::after{
+    top:5.6rem;
+    left:1.2rem;
+}
+
+@keyframes circles{
+    0%{
+        transform:rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 
 .hamburger-menu{
     width: 3rem;
@@ -26,7 +98,7 @@ html{
     justify-content: space-evenly;
     cursor: pointer;
     transition: right .2s;
-}
+} 
 
 .change .hamburger-menu{
     right: 33rem;;
@@ -104,12 +176,12 @@ html{
     overflow: hidden;
     justify-content: center;
 }
-.img-wapper img{
+.img-wrapper img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
     opacity: 0.5;
-    display: flex;
-    animation: scale 30s;
+    animation: scale 15s;
 }
 
 @keyframes scale{
@@ -260,12 +332,12 @@ html{
     font-size: 5rem;
     font-weight: 300;
     color: #4b4b4b;
-    margin-bottom: 6rem;
+    margin-bottom: 0.5rem;
 }
 
 .underline{
     width: 12rem;
-    height: 0.3rem;
+    height: .3rem;
     background-color: #c29525;
 }
 
@@ -274,9 +346,9 @@ html{
     height: 100%;
     display:grid;
     object-fit:contain;
-    grid-template-columns: repeat(10,1fr);
+    grid-template-columns: repeat(16 ,1fr);
     grid-template-rows: repeat(6, 6rem);
-    grid-row-gap: 2rem ;
+    grid-row-gap: 4rem ;
     align-items: center;
     justify-content: center;
 }
@@ -287,10 +359,10 @@ html{
 }
 .service:nth-child(1){
     grid-column: 4/7;
-    grid-row: 1/5;
+    grid-row: 1/3;
 }
  .service:nth-child(2){
-    grid-column: 3/6;
+    grid-column: 3/ 6;
     grid-row: 3/5;
 }
 .service:nth-child(3){
@@ -333,16 +405,17 @@ html{
 }
     
 .about-us-img-wrapper {
-    grid-column: 10/11;
-    grid-row: 3/6;
+    grid-column: 7/11;
+    grid-row: 2/6;
     width: 100%;
 }
 .about-us-img-wrapper img{
-    width: 50rem;
-    align-content: center;
-    justify-content: center;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    border-radius: 2rem;
 }
-
+/* Team Section */
 .team{
     display: flex;
     flex-direction: column;
@@ -438,7 +511,7 @@ html{
     border-radius: 0.5rem;
     box-shadow: 0 0.1rem 0.8rem rgba(0,0,0,0.4);
 }
- 
+ /* Contact Section */
 .contact{
     width: 100%;
     height: 100vh;
@@ -449,16 +522,15 @@ html{
 }
 
 .contact-wrapper{
-    width: 70%;
-    height: 60rem;
+    width: 60%;
+    height: 75vh;
     display: flex;
-    background-color: #fff;
-    box-shadow: 0 3rem 7rem rgba(0,0,0,0.5);
+    box-shadow: 0 3rem 7rem r gba(0,0,0,0.5);
 }
 
 .contact-left{
-    width: 35%;
-    background: linear-gradient(rgba(15,15,15,0.6), rgba(22,22,22,0.9)),
+    width: 40%;
+    background: linear-gradient(rgba(15,15,15,0.6), rgba(22,22,22,0.9)), url(images/download\ \(1\).jpg)
     center no-repeat;
     background-size: cover;
 }
@@ -466,7 +538,7 @@ html{
 .contact-right{
     width: 100%;
     background-color: #eee;
-    padding: 2rem 10rem 50rem;
+    padding: 3rem 10rem 10rem 10rem;
 }
 .contact-heading{
     font-family: "Baloo Da 2",serif;
@@ -478,7 +550,7 @@ html{
 }
 
 .contact-right form{
-    width: 75%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items:  center;
@@ -488,7 +560,7 @@ html{
     position: relative;
 }
  .field{
-    width: 30rem;
+    width: 30vw;
     background-color: transparent;
     border: none;
     border-bottom: 0.2rem dashed #636363;
@@ -500,12 +572,12 @@ html{
  }
 
  .input-group input{
-    height: 4rem
+    height: 2rem
  }
 
  .input-group textarea{
-    max-height: 7rem;
-    max-width: 45rem;
+    max-height: 6rem;
+    max-width: 40rem;
  }
 
  .field:focus{
@@ -522,17 +594,281 @@ html{
     pointer-events: none;
     transition: all 0.3s;
  }
-
+ 
  .input-label{
-    bottom: 3rem;
+    bottom: 5rem;
  }
 
  .message{
-    bottom: 6rem;
+    bottom: 7rem;
  }
 
 .field:focus ~ label{
-    transform: translateY(-3rem);
-    font-size: 1.2rem;
+    transform: translateY(-1.2rem);
+    font-size: 1.5rem;
 }
+
+.submit-btn{
+    width: 13rem;
+    height: 3rem;
+    background-color: #c29525;
+    color: #fff;
+    border: none;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    font-family: "Mulish", serif;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    cursor: pointer;
+    text-shadow: .1rem .3rem rgba(0,0,0,0.2);
+    box-shadow: 0 .1rem .3rem rgba(0,0,0,1);
+}
+
+/* Footer Section */
+
+.footer{
+    width: 100%;
+    height: 10rem;
+    background-color: #17181b;
+    display: flex;
+    position: absolute;
+}
+
+.footer-content{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-left: 200px;
+}
+
+.copyright{
+    font-family: 'Baloo Da 2';
+    font-size: 1.5rem;
+    color: #a7a7a7;
+}
+
+.social-list i{
+    font-size: 2rem;
+    color:#a7a7a7;
+    margin-right: 10px;
+}
+
+.scroll-btn{
+    position: fixed;
+    right: 5rem;
+    bottom: 2.5rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: #e2b646;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #fff;
+    box-shadow: 0 .1rem .6rem rgba(0,0,0,0.2);
+    border-radius: .5rem;
+}
+
+
+ /* Media Query for Smaller Screens (Phones) */
+ @media(max-width : 1500px){
+    .about-us-img-wrapper{
+        grid-row: 3/-1;
+    }
+    .car{
+        width: 34rem;
+    }
+    .contact-wrapper{
+        width: 80%;
+        height: 65rem;
+    }
+    .footer-content{
+        width:80%;
+    }  
+ }
+ @media(max-width: 1400px){
+    .banner h1{
+        font-size: 6rem;
+        line-height: 7rem;
+    }
+    .banner p{
+        font-size: 2rem;
+    }
+    .banner button{
+        width: 20rem;
+        height: 5rem;
+        font-size: 1.6rem;
+    }
+    .menu-link{
+        font-size: 3rem;
+
+    }.service:nth-child(1){
+        grid-column: 3/7;
+    }
+     .service:nth-child(2){
+        grid-column: 2/ 6;
+    }
+    .service:nth-child(3){
+        grid-column: 3/7;
+
+    }
+    .service:nth-child(4){
+        grid-column: 11/15;
+    }
+    .service:nth-child(5){
+        grid-column: 12/16;
+    }
+    .service:nth-child(6){
+        grid-column: 11/15;
+    }
+ }
+@media(max-width: 1300px){
+    .team{
+        padding-bottom: column;
+    }
+    .cards-wrapper{
+        flex-direction:column;
+        align-items: center;
+        margin-top: 4rem;
+    }
+    .card{
+        margin-bottom: 8rem;
+    }
+
+    .contact-wrapper{
+        width: 90%;
+        height: 55rem;
+    }
+
+    .contact-heading{
+        margin-bottom: 2rem;
+    }
+
+    .field{
+        margin: 2rem 0;
+    }
+}
+    
+@media(max-width:1000px){
+    .banner h1{
+        font-size: 5rem;
+        line-height: 6rem;
+    }
+
+    .banner p{
+        font-size: 2.5rem;
+    }
+    .banner button{
+        width: 18rem;
+        height: 4rem;
+        font-size: 1.5rem;
+    }
+    .services{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 40rem;
+        margin-bottom: 6rem;
+    }
+
+    .about-us-img-wrapper{
+        width: 40rem;
+    }
+    .about-us-img-wrapper img{
+        width: 100%;
+    }
+    .contact-left{
+        width: 0;
+    }
+    .contact-right{
+        width: 100%;
+    }
+    .field{
+        width: 55rem;
+    }
+    .input-group textarea{
+        max-width: 55rem;
+    }
+    .submit-btn{
+        width: 55rem;
+    }
+    .footer-content{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 50%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    .copyright{
+        order: 1;
+        margin-top: -2rem;
+    }
+}
+
+@media(max-width: 700px){
+    .banner h1{
+        font-size: 4rem;
+        line-height: 5rem;
+    }
+    .banner p{
+        font-size: 2rem;
+    }
+    .field{
+        width: 35rem;
+    }
+    .input-group textarea{
+        max-width: 35rem;
+    }
+    .submit-btn{
+        width: 35rem;
+    }
+}
+@media(max-width: 500px){
+    html{
+        font-size: 50%;
+    }
+    .sidebar{
+        width: 50%;
+        right: -50%;
+    }
+    .change .hamburger-menu{
+        right: 100px;
+    }
+    .service{
+        width: 10rem;
+    }
+    .footer{
+        height: 10rem;
+    }
+}
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
